@@ -36,7 +36,8 @@ code {
 
 
 .boardContainer{
-  align-self: center;
+  display: flex;
+  justify-content: center;
 }
 
 .boardStyle{
@@ -46,13 +47,11 @@ code {
   flex-wrap: wrap;
   padding: 1%;
   justify-content: center;
+  align-items: center;
   background-color:#BBAAAA ;
   border-radius: 0.25rem;
   margin-bottom: 3%;
 }
-
-
-
 
 .tileStyle{
   height: 22.5%;

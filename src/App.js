@@ -1,10 +1,8 @@
 import React,{useReducer, useEffect} from 'react'
-import Tile from './Tile';
 import Board from './Board';
 import './styles.css';
 import Modal from 'react-responsive-modal';
 import {moveLeft, moveRight, moveUp, moveDown, newTile, gameStatus, decide, getFreshBoard} from './logic';
-import Swipe from 'react-easy-swipe';
 const intialState = {
     board : getFreshBoard(),
     gameOver : false,
