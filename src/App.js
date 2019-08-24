@@ -4,7 +4,7 @@ import Board from './Board';
 import './styles.css';
 import Modal from 'react-responsive-modal';
 import {moveLeft, moveRight, moveUp, moveDown, newTile, gameStatus, decide, getFreshBoard} from './logic';
-
+import Swipe from 'react-easy-swipe';
 const intialState = {
     board : getFreshBoard(),
     gameOver : false,
@@ -82,7 +82,15 @@ function App() {
             <globalState.Provider value={{state:State,dispatch:Dispatch}}>
                 <div className='appContainer'>
                     <div className='boardContainer'> 
-                        <Board/>
+                        <Swipe
+                            onSwipeUp = {()=>Dispatch({move:'UP'})}
+                            onSwipeDown = {()=>Dispatch({move:'DOWN'})}
+                            onSwipeLeft = {()=>Dispatch({move:'LEFT'})}
+                            onSwipeRight = {()=>Dispatch({move:'RIGHT'})}
+                        >
+                            <Board/>
+                        </Swipe>
+                        
                         <button className='btn' onClick={()=>{Dispatch({move:'RESET'})}}>NEW GAME</button>
                         <p>Made with ❤ in ReactJS. Copy of famous game 2048.<br/>Best experienced on web devices.</p>
                     </div>
