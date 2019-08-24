@@ -91,7 +91,7 @@ function App() {
                         </div>
                         <button className='btn btn-newgame' onClick={()=>{Dispatch({move:'RESET'})}}>NEW GAME</button>
                     </div>
-                    <p>Made with ❤ in ReactJS. Copy of famous game 2048.<br/>Best experienced on web devices. You can also use arrow keys.</p>
+                    <p>Made with ❤ in ReactJS.<br/>Best experience on web devices. Use arrow keys for moving tiles.</p>
                 </div>     
             </globalState.Provider>
             <Modal classNames={{modal:'mOverlay'}} center={true} showCloseIcon={false} open={State.gameWin} onClose={()=>Dispatch({move:'RESET'})}>
