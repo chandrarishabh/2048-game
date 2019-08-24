@@ -78,40 +78,31 @@ function App() {
 
     return (
         <div className='App'>
-            <h1 className='coolHeading'>{'<'}TWO ZERO FOUR EIGHT{'/>'}</h1>
+            <h1 className='coolHeading'>{'<'}TWO ZERO FOUR EIGHT{' />'}</h1>
             <globalState.Provider value={{state:State,dispatch:Dispatch}}>
                 <div className='appContainer'>
                     <div className='boardContainer'> 
-                        <Swipe
-                            onSwipeUp = {()=>Dispatch({move:'UP'})}
-                            onSwipeDown = {()=>Dispatch({move:'DOWN'})}
-                            onSwipeLeft = {()=>Dispatch({move:'LEFT'})}
-                            onSwipeRight = {()=>Dispatch({move:'RIGHT'})}
-                        >
-                            <Board/>
-                        </Swipe>
-                        
-                        <button className='btn' onClick={()=>{Dispatch({move:'RESET'})}}>NEW GAME</button>
-                        <p>Made with ❤ in ReactJS. Copy of famous game 2048.<br/>Best experienced on web devices.</p>
+                        <Board/>
                     </div>
-                    {
-                    /* <div className='buttonsContainer'>
-                        <button onClick={()=>Dispatch({move:'UP'})}>UP</button>
-                        <button onClick={()=>Dispatch({move:'DOWN'})}>DOWN</button>
-                        <button onClick={()=>Dispatch({move:'LEFT'})}>LEFT</button>
-                        <button onClick={()=>Dispatch({move:'RIGHT'})}>RIGHT</button>    
-                    </div> */
-                    }
-                    
+                    <div>
+                       <div className='buttonsContainer'>
+                        <button className='btn' onClick={()=>Dispatch({move:'LEFT'})}>LEFT</button>
+                        <button className='btn' onClick={()=>Dispatch({move:'UP'})}>UP</button>
+                        <button className='btn' onClick={()=>Dispatch({move:'DOWN'})}>DOWN</button>
+                        <button className='btn' onClick={()=>Dispatch({move:'RIGHT'})}>RIGHT</button>    
+                        </div>
+                        <button className='btn btn-newgame' onClick={()=>{Dispatch({move:'RESET'})}}>NEW GAME</button>
+                    </div>
+                    <p>Made with ❤ in ReactJS. Copy of famous game 2048.<br/>Best experienced on web devices. You can also use arrow keys.</p>
                 </div>     
             </globalState.Provider>
             <Modal classNames={{modal:'mOverlay'}} center={true} showCloseIcon={false} open={State.gameWin} onClose={()=>Dispatch({move:'RESET'})}>
                 <h1> Winner Winner<br/> Chicken Dinner </h1>
-                <button className='btn' onClick={()=>{Dispatch({move:'RESET'})}}>NEW GAME</button>
+                <button className='btn btn-newgame' onClick={()=>{Dispatch({move:'RESET'})}}>NEW GAME</button>
             </Modal>
             <Modal classNames={{modal:'mOverlay'}} center={true} showCloseIcon={false} open={State.gameOver} onClose={()=>Dispatch({move:'RESET'})}>
                 <h1> Game Over </h1>
-                <button className='btn' onClick={()=>{Dispatch({move:'RESET'})}}>NEW GAME</button>
+                <button className='btn btn-newgame' onClick={()=>{Dispatch({move:'RESET'})}}>NEW GAME</button>
             </Modal>
         </div>
     )
