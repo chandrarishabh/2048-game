@@ -10,7 +10,7 @@
     "react-dom": "^16.9.0",
     "react-easy-swipe": "0.0.18",
     "react-responsive-modal": "^4.0.1",
-    "react-scripts": "3.1.0",
+    "react-scripts": "5.0.1",
     "react-signature-canvas": "^1.0.3",
     "resize-base64": "^1.0.12"
   },
